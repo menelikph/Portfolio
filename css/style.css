@@ -1,0 +1,283 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Gothic&display=swap");
+
+:root {
+  --color-principal: #a38ae7;
+  --color-secundario: #9e8ae77a;
+  --fuente-principal: "League Gothic", sans-serif;
+  --fuente-secundaria: "Poppins", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  font-family: var(--fuente-secundaria);
+}
+
+html {
+  color-scheme: dark;
+  font-size: 12px;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: black;
+  color: white;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  padding: 1rem 9%;
+  padding-top: 50px;
+  filter: drop-shadow(60px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+
+.logo {
+  font-family: var(--fuente-principal);
+  text-transform: uppercase;
+  font-size: 4rem;
+  color: var(--color-principal);
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.logo:hover {
+  transform: scale(1.2);
+}
+
+nav a {
+  font-size: 1.7rem;
+  color: white;
+  margin-left: 4rem;
+  font-weight: 500;
+  transition: 0.3s ease color, 0.3s ease border-bottom;
+  border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--color-principal);
+  border-bottom: 3px solid var(--color-principal);
+}
+
+.menu {
+  display: none;
+}
+
+section {
+  min-height: 100vh;
+  padding: 1rem 9% 1rem;
+}
+
+.home {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 8rem;
+  background-color: black;
+}
+
+.home .home-content h1 {
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+span {
+  color: var(--color-principal);
+}
+
+.home-content {
+  flex: 1;
+}
+
+.home-content h3 {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.home-content p {
+  font-size: 1.6rem;
+}
+
+.home-img {
+  border-radius: 50%;
+  min-width: 300px;
+  width: 30vw;
+}
+
+.home-img img {
+  width: 100%;
+  margin-top: 22px;
+  position: relative;
+  border-radius: 33px;
+  transition: 0.4s linear;
+  mask-image: linear-gradient(black 40%, transparent);
+  mask-image: linear-gradient(
+    transparent 5%,
+    rgb(255, 255, 255) 30%,
+    transparent 100%
+  );
+}
+
+/*--------------Second sesion--------------------*/
+
+.container-photos{
+  background-color: #a38ae7;
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.photos{
+  margin: 2rem;
+}
+
+.photos img{
+  height: 60vh;
+  border-radius: 1.5rem;
+  transition: transform 1.5s;
+}
+
+.photos img:hover{
+  transform: scale(1.2);
+}
+
+/*https://es.wix.com/website-template/view/html/2948?originUrl=https%3A%2F%2Fes.wix.com%2Fwebsite%2Ftemplates&tpClick=view_button&esi=ec1a934b-8891-43f0-be54-dfbeb32625c4*/
+
+
+
+
+
+
+
+.content-about-me {
+  background-color: #0f0e0e;
+  height: 55rem;
+  padding: 4% 7% 4% 7%;
+  display: flex;
+  align-items: start;
+  gap: 6rem;
+}
+
+.content-about-me h1 {
+  text-align: end;
+  font-size: 6rem;
+  margin-bottom: 2rem;
+  font-family: var(--fuente-principal);
+  font-weight: normal;
+}
+
+.text-about-me {
+  margin-top: 6rem;
+  background-color: var(--color-secundario);
+  padding: 3rem;
+  border-radius: 2rem;
+  font-size: 1.6rem;
+  box-shadow: 14px 10px 30px -8px rgba(0,0,0,0.77);
+-webkit-box-shadow: 14px 10px 30px -8px rgba(0,0,0,0.77);
+-moz-box-shadow: 14px 10px 30px -8px rgba(0,0,0,0.77);
+}
+
+iframe {
+  border-radius: 2rem;
+}
+
+.container-first-text {
+  text-align: justify;
+}
+
+.container-second-text {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  gap: 8rem;
+  text-align: justify;
+}
+
+.container-second-text > div {
+  width: 50%;
+}
+
+/*----------------FOOTER------------------------*/
+.footer-section {
+  padding: 50px;
+  text-align: center;
+  background-color: grey;
+  color: rgb(0, 0, 0);
+  bottom: 0;
+
+  
+  
+}
+
+@media (max-width: 995px) {
+  nav {
+    padding: 8px;
+    position: absolute;
+    top: 100%;
+    overflow: hidden;
+    right: 16px;
+    width: 40%;
+    border: 1px solid rgba(255, 231, 231, 0.1);
+    border-radius: 2rem;
+    padding: 1rem solid;
+    background-color: #050505;
+    transition: 0.2s ease opacity;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+  }
+
+  .menu {
+    display: flex;
+  }
+
+  #menu:checked + nav {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  nav a {
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
+    padding: 1rem;
+  }
+
+  nav a:hover,
+  nav a.active {
+    border-radius: 0.5rem;
+    border-bottom: 0.5rem solid var(--color-principal);
+  }
+
+  .content-about-me {
+    height: 100%;
+    padding: 4% 7% 4% 7%;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+  }
+  iframe {
+    width: 100%;
+  }
+}
