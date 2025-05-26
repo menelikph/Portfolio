@@ -40,39 +40,106 @@
 
     <div class="about" id="about">
       <div class="about-info">
+        <div class="about-title">
           <h1>ABOUT ME</h1>
-        <div class="divider"></div>
+          <div class="divider"></div>
+        </div>
         <p>
-          Hi everyone, my name is Menelik Puerta Herrera. 
-          I am 23 years old and I'm from Colombia 🇨🇴. <br> <br> I studied Camera and Photography for Film at SENA, from 2019 to 2022. 
-          In terms of professional experience, I’ve worked as a camerawoman at BMX and motocross sports events.   
+          Hi everyone, my name is Menelik Puerta Herrera. I am 23 years old and
+          I'm from Colombia. <br />
+          <br />
+          I studied Camera and Photography for Film at SENA, from 2019 to 2022.
+          In terms of professional experience, I’ve worked as a camerawoman at
+          BMX and motocross sports events.
         </p>
         <button class="dowload-cv"><b>Read more</b></button>
       </div>
       <iframe
-          class="container-video"
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/W1iibISCcO8?si=95Uf2NHuDgoXrQ42"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
+        class="container-video"
+        src="https://www.youtube.com/embed/W1iibISCcO8?si=95Uf2NHuDgoXrQ42"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
     </div>
-  
-      
-  
-      
-  
-    
-    
 
-   
-    
-      
+    <!-- TECHNICAL SKILLS SECTION -->
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      <ul>
+        <!-- Unordered list of your technical competencies -->
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>Basic JavaScript</li>
+        <li>Git and GitHub</li>
+        <li>Teamwork</li>
+      </ul>
+    </section>
 
+    <!-- PROJECTS SECTION -->
+    <section id="projects">
+      <h2>My Projects</h2>
+
+      <!-- Example project with image -->
+      <article>
+        <h3>Project 1: Personal Webpage</h3>
+        <p>A basic website to display personal info using only HTML and CSS.</p>
+        <img src="img/project.jpg" alt="Screenshot of project 1" width="300" />
+      </article>
+
+      <!-- Table to summarize projects -->
+      <h3>Project Summary</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Project</th>
+            <!-- Table column title -->
+            <th>Technologies</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Portfolio</td>
+            <td>HTML</td>
+            <td>
+              <a href="https://github.com/menelikph" target="_blank">View</a>
+              <!-- Opens in new tab -->
+            </td>
+          </tr>
+          <tr>
+            <td>Gallery</td>
+            <td>HTML, CSS</td>
+            <td>
+              <a href="https://github.com/menelikph" target="_blank">View</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+      <h2>Contact</h2>
+
+      <!-- Contact form with validation -->
+      <form action="#" method="post">
+        <!-- Form that simulates sending data -->
+        <label for="name">Name:</label><br />
+        <input type="text" id="name" name="name" required /><br /><br />
+
+        <label for="email">Email:</label><br />
+        <input type="email" id="email" name="email" required /><br /><br />
+
+        <label for="message">Message:</label><br />
+        <textarea id="message" name="message" rows="4" required></textarea
+        ><br /><br />
+
+        <input type="submit" value="Send" />
+      </form>
+    </section>
 
     <footer>
       <div class="footer-section">
