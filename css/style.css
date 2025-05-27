@@ -20,6 +20,7 @@
 html {
   color-scheme: dark;
   font-size: 12px;
+  scroll-behavior: smooth;
 }
 
 body {
