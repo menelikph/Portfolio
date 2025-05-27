@@ -36,8 +36,7 @@ header {
   left: 0;
   background: rgba(0, 0, 0, 0.7);
   width: 100%;
-  padding: 1rem 9%;
-  padding-top: 50px;
+  padding: 2rem 9%;
   filter: drop-shadow(60px);
   display: flex;
   justify-content: space-between;
@@ -51,7 +50,6 @@ header {
   text-transform: uppercase;
   font-size: 4rem;
   color: var(--color-principal);
-  cursor: pointer;
   transition: 0.5s ease;
 }
 
@@ -61,11 +59,12 @@ header {
 
 nav a {
   font-size: 1.7rem;
-  color: white;
+  color: rgb(255, 255, 255);
   margin-left: 4rem;
   font-weight: 500;
   transition: 0.3s ease color, 0.3s ease border-bottom;
   border-bottom: 3px solid transparent;
+  text-decoration: none;
 }
 
 nav a:hover,
@@ -79,7 +78,6 @@ nav a.active {
 }
 
 section {
-  min-height: 100vh;
   padding: 1rem 9% 1rem;
 }
 
@@ -90,6 +88,8 @@ section {
   align-items: center;
   column-gap: 8rem;
   background-color: black;
+  min-height: 100vh;
+  margin-top: 5rem;
 }
 
 .home .home-content h1 {
@@ -142,7 +142,7 @@ span {
   background-color: var(--color-principal);
   border: none;
   border-radius: 20px;
-  margin-top: 10px;
+  margin-top: 3rem;
   cursor: pointer;
   -webkit-box-shadow: 0px 10px 13px -7px #000000,
     1px -5px 20px 9px rgba(163, 138, 231, 0.14);
@@ -162,6 +162,7 @@ span {
   background-color: rgb(19, 18, 18);
   grid-template-columns: repeat(2, 1fr);
   width: 100vw;
+  height: 90vh;
   align-items: center;
   gap: 5rem;
   padding: 2rem 10rem;
@@ -170,13 +171,14 @@ span {
   text-align: justify;
   align-items: center;
   font-family: var(--fuente-secundaria);
-  font-size: 1.3rem;
+  font-size: 1.4rem;
 }
 
 .about-title {
   display: flex;
   flex-direction: column;
   justify-content: start;
+  font-size: 1.9rem;
 }
 .about-info h1 {
   font-family: var(--fuente-principal);
@@ -198,16 +200,256 @@ span {
   margin-top: 10%;
   margin-bottom: 10%;
   width: 100%;
-  height: 100%;
+  height: 60%;
   border-radius: 20px;
+}
+
+/* SKILLS SECTION */
+#skills {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+#skills h2 {
+  font-size: 5rem;
+  color: var(--color-principal);
+  font-family: var(--fuente-principal);
+}
+
+#skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+
+#skills li {
+  background-color: #1a1a1a;
+  margin: 10px auto;
+  padding: 12px 20px;
+  width: fit-content;
+  min-width: 10rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  color: #ffffff;
+  transition: background 0.3s;
+}
+
+#skills li:hover {
+  background-color: #333333;
+  transform: scale(1.2);
+}
+
+/* PROJECTS SECTION */
+#projects {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+#projects h2 {
+  font-size: 5rem;
+  color: var(--color-principal);
+  font-family: var(--fuente-principal);
+}
+#projects h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-principal);
+  margin-bottom: 15px;
+}
+
+.list-proyects {
+  /* display: grid;
+  grid-template-columns: repeat(2, 2fr); */
+  display: flex;
+  justify-content: center;
+}
+
+#projects article {
+  background-color: #121212;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  width: 40rem;
+}
+
+#projects img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 15px;
+  margin-bottom: 2rem;
+}
+#projects p {
+  font-size: 14px;
+}
+
+.proyects-links {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.link-button {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 100%;
+  background-color: var(--color-secundario);
+  font-size: 35px;
+  cursor: pointer;
+}
+.link-button i {
+  text-decoration: none;
+  color: white;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 6px 10px;
+  border-radius: 6px;
+  position: absolute;
+  bottom: 120%; /* posición sobre el botón */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+
+  /* Flechita del tooltip */
+  white-space: nowrap;
+}
+
+.tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* justo debajo del tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* CONTACT SECTION */
+.contact {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0;
+}
+
+.contact h2 {
+  font-family: var(--fuente-principal);
+  margin: 20px;
+
+  text-align: center;
+  font-size: 5rem;
+}
+
+.contact form {
+  width: 50rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+  height: 100%;
+}
+
+label {
+  font-size: 1rem;
+  color: var(--color-principal);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  background-color: #ffffff;
+  color: white;
+  resize: vertical;
+}
+
+input[type="submit"] {
+  background: linear-gradient(
+    115deg,
+    rgba(103, 19, 152, 1) 19%,
+    rgba(150, 44, 168, 1) 100%
+  );
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+input[type="submit"]:hover {
+  background: linear-gradient(
+    115deg,
+    rgba(66, 9, 99, 1) 19%,
+    rgba(98, 25, 110, 1) 100%
+  );
+}
+
+.contact-img img {
+  width: 50rem;
+  height: 100%;
+}
+
+/* FOOTER */
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  #skills li {
+    width: 100%;
+  }
+
+  table,
+  th,
+  td {
+    font-size: 0.9rem;
+  }
+
+  input[type="submit"] {
+    font-size: 0.95rem;
+  }
 }
 
 /*----------------FOOTER------------------------*/
 .footer-section {
   padding: 50px;
   text-align: center;
-  background-color: grey;
-  color: rgb(0, 0, 0);
+  background: linear-gradient(
+    115deg,
+    rgba(103, 19, 152, 1) 19%,
+    rgba(150, 44, 168, 1) 100%
+  );
+  color: rgb(255, 255, 255);
   bottom: 0;
 }
 
@@ -276,7 +518,7 @@ span {
     grid-column: 1/1;
     align-items: center;
     font-family: var(--fuente-secundaria);
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
 
   .about-title {
@@ -294,9 +536,17 @@ span {
   }
 
   .about iframe {
-    margin-top: 10%;
+    margin-top: 20%;
     margin-bottom: 10%;
     width: 100%;
+    height: 80%;
     grid-column: 1/1;
+  }
+  .contact form {
+    width: 100%;
+    padding: 2rem 2rem;
+  }
+  .contact-img img {
+    display: none;
   }
 }

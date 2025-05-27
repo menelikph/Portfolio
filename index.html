@@ -3,19 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="img/gato.svg" type="image/png" />
     <title>Menelik Ph</title>
     <link rel="stylesheet" href="./css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/dfb7936a62.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <header>
-      <a href="#" class="logo">Menelik</a>
+      <a href="#home" class="logo">Menelik</a>
       <label class="menu" for="menu" style="font-size: 27px">☰</label>
       <input id="menu" hidden type="checkbox" />
       <nav>
         <a href="#home" class="active">Home</a>
         <a href="#about">About me</a>
-        <a href="#">Skills</a>
-        <a href="#">education</a>
+        <a href="#skills">Skills</a>
         <a href="#">contact</a>
       </nav>
     </header>
@@ -37,8 +41,9 @@
         </a>
       </div>
     </section>
+    <div id="about"></div>
 
-    <div class="about" id="about">
+    <div class="about">
       <div class="about-info">
         <div class="about-title">
           <h1>ABOUT ME</h1>
@@ -46,7 +51,7 @@
         </div>
         <p>
           Hi everyone, my name is Menelik Puerta Herrera. I am 23 years old and
-          I'm from Colombia. <br />
+          I'm from Colombia 🇨🇴. <br />
           <br />
           I studied Camera and Photography for Film at SENA, from 2019 to 2022.
           In terms of professional experience, I’ve worked as a camerawoman at
@@ -67,35 +72,102 @@
 
     <!-- TECHNICAL SKILLS SECTION -->
     <section id="skills">
-      <h2>Technical Skills</h2>
-      <ul>
+      <div style="display: flex; flex-direction: column; align-items: center">
+        <h2>Technical Skills</h2>
+        <div class="divider"></div>
+      </div>
+      <ul class="list-skils">
         <!-- Unordered list of your technical competencies -->
-        <li>HTML5</li>
-        <li>CSS3</li>
-        <li>Basic JavaScript</li>
-        <li>Git and GitHub</li>
-        <li>Teamwork</li>
+        <li>
+          <div class="logo">
+            <i class="fa-brands fa-html5"></i>
+          </div>
+          HTML5
+        </li>
+        <li>
+          <div class="logo">
+            <i class="fa-brands fa-css"></i>
+          </div>
+          CSS3
+        </li>
+        <li>
+          <div class="logo">
+            <i class="fa-brands fa-js"></i>
+          </div>
+          Basic JavaScript
+        </li>
+        <li>
+          <div class="logo">
+            <i class="fa-brands fa-github"></i>
+          </div>
+          Git and GitHub
+        </li>
+        <li>
+          <div class="logo">
+            <i class="fa-brands fa-python"></i>
+          </div>
+          python
+        </li>
       </ul>
     </section>
 
     <!-- PROJECTS SECTION -->
     <section id="projects">
-      <h2>My Projects</h2>
-
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 2rem;
+        "
+      >
+        <h2>My Projects</h2>
+        <div class="divider"></div>
+      </div>
       <!-- Example project with image -->
-      <article>
-        <h3>Project 1: Personal Webpage</h3>
-        <p>A basic website to display personal info using only HTML and CSS.</p>
-        <img src="img/project.jpg" alt="Screenshot of project 1" width="300" />
-      </article>
+      <div class="list-proyects">
+        <article>
+          <h3>Project 1: Personal Webpage</h3>
+          <img
+            src="img/proyect-1.png"
+            alt="Screenshot of project 1"
+            width="300"
+          />
+          <div></div>
+          <p>
+            A simple personal portfolio built with HTML and CSS. It showcases
+            basic sections like About Me, Projects, and Contact.
+          </p>
+          <div class="proyects-links">
+            <div class="tooltip">
+              <a
+                class="link-button"
+                target="_blank"
+                href="https://github.com/menelikph/Portfolio"
+              >
+                <i class="fa-brands fa-github-alt"></i
+              ></a>
+              <span class="tooltip-text">See the code</span>
+            </div>
+            <div class="tooltip">
+              <a
+                class="link-button"
+                target="_blank"
+                href="https://github.com/menelikph/Portfolio"
+              >
+                <i class="fa-solid fa-pager"></i
+              ></a>
+              <span class="tooltip-text">See the page</span>
+            </div>
+          </div>
+        </article>
+      </div>
 
-      <!-- Table to summarize projects -->
-      <h3>Project Summary</h3>
+      <!-- <h3>Project Summary</h3>
       <table>
         <thead>
           <tr>
             <th>Project</th>
-            <!-- Table column title -->
             <th>Technologies</th>
             <th>Link</th>
           </tr>
@@ -106,7 +178,6 @@
             <td>HTML</td>
             <td>
               <a href="https://github.com/menelikph" target="_blank">View</a>
-              <!-- Opens in new tab -->
             </td>
           </tr>
           <tr>
@@ -117,38 +188,55 @@
             </td>
           </tr>
         </tbody>
-      </table>
+      </table> -->
     </section>
 
     <!-- CONTACT SECTION -->
-    <section id="contact">
-      <h2>Contact</h2>
+    <section class="contact" id="contact">
+      <div class="contact-form">
+        <h2>Contact</h2>
+        <!-- Contact form with validation -->
+        <form action="#" method="post">
+          <!-- Form that simulates sending data -->
+          <label for="name">Name:</label><br />
+          <input type="text" id="name" name="name" required /><br /><br />
 
-      <!-- Contact form with validation -->
-      <form action="#" method="post">
-        <!-- Form that simulates sending data -->
-        <label for="name">Name:</label><br />
-        <input type="text" id="name" name="name" required /><br /><br />
+          <label for="email">Email:</label><br />
+          <input type="email" id="email" name="email" required /><br /><br />
 
-        <label for="email">Email:</label><br />
-        <input type="email" id="email" name="email" required /><br /><br />
+          <label for="message">Message:</label><br />
+          <textarea id="message" name="message" rows="4" required></textarea
+          ><br /><br />
 
-        <label for="message">Message:</label><br />
-        <textarea id="message" name="message" rows="4" required></textarea
-        ><br /><br />
-
-        <input type="submit" value="Send" />
-      </form>
+          <input type="submit" value="Send" />
+        </form>
+      </div>
+      <div class="contact-img">
+        <img src="/img/menephoto.PNG" alt="" />
+      </div>
     </section>
 
     <footer>
       <div class="footer-section">
-        <h1>About Us Page</h1>
-        <p>Some text about who we are and what we do.</p>
-        <p>
-          Resize the browser window to see that this page is responsive by the
-          way.
-        </p>
+        <a href="#home" class="logo">Menelik</a>
+        <div
+          style="
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+          "
+        >
+          <a href="https://github.com/menelikph" target="_blank">GitHub</a>
+
+          <a
+            href="https://www.linkedin.com/in/menelik-puerta-herrera-65769922a/"
+            target="_blank"
+            >LinkedIn</a
+          >
+        </div>
+
+        <p>&copy; 2025 Menelik Puerta Herrera</p>
       </div>
     </footer>
   </body>
