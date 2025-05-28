@@ -152,7 +152,7 @@ span {
 }
 
 /* Download CV button */
-.dowload-cv {
+.download-cv {
   font-family: var(--fuente-secundaria);
   padding: 10px 20px;
   background-color: var(--color-principal);
@@ -166,7 +166,7 @@ span {
     1px -5px 20px 9px rgba(163, 138, 231, 0.14);
 }
 
-.dowload-cv:hover {
+.download-cv:hover {
   background-color: #846cc7;
   box-shadow: none;
 }
@@ -406,7 +406,7 @@ textarea {
   border-radius: 6px;
   border: none;
   background-color: #ffffff;
-  color: white;
+  color: rgb(0, 0, 0);
   resize: vertical;
 }
 
