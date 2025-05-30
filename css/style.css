@@ -1,15 +1,21 @@
-/* Import Google Fonts */
+/*==============================
+  Import Google Fonts
+==============================*/
 @import url("https://fonts.googleapis.com/css2?family=League+Gothic&display=swap");
 
-/* Define color and font variables */
+/*==============================
+  CSS Custom Properties (Variables)
+==============================*/
 :root {
-  --color-principal: #a38ae7;
-  --color-secundario: #9e8ae77a;
-  --fuente-principal: "League Gothic", sans-serif;
-  --fuente-secundaria: "Poppins", sans-serif;
+  --color-principal: #a38ae7; /* Primary accent color */
+  --color-secundario: #9e8ae77a; /* Secondary accent color (semi-transparent) */
+  --fuente-principal: "League Gothic", sans-serif; /* Title font */
+  --fuente-secundaria: "Poppins", sans-serif; /* Body font */
 }
 
-/* Reset default styles */
+/*==============================
+  Global Reset
+==============================*/
 * {
   margin: 0;
   padding: 0;
@@ -20,39 +26,47 @@
   font-family: var(--fuente-secundaria);
 }
 
-/* General HTML styles */
+/*==============================
+  HTML Base Styles
+==============================*/
 html {
-  color-scheme: dark;
-  font-size: 12px;
-  scroll-behavior: smooth;
+  color-scheme: dark; /* Enables dark theme preferences */
+  font-size: 12px; /* Base font size */
+  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
 }
 
-/* Body base style */
+/*==============================
+  Body Styling
+==============================*/
 body {
   width: 100%;
   height: 100%;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Prevent horizontal scroll */
   background-color: black;
   color: white;
 }
 
-/* Header navigation bar */
+/*==============================
+  Header & Navigation Bar
+==============================*/
 header {
-  position: fixed;
+  position: fixed; /* Stick to top of page */
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
   width: 100%;
   padding: 2rem 9%;
-  filter: drop-shadow(60px);
+  filter: drop-shadow(60px); /* Shadow effect */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 100;
-  backdrop-filter: blur(10px);
+  z-index: 100; /* Bring to front */
+  backdrop-filter: blur(10px); /* Blur behind content */
 }
 
-/* Logo style */
+/*==============================
+  Logo Styling
+==============================*/
 .logo {
   font-family: var(--fuente-principal);
   text-transform: uppercase;
@@ -62,13 +76,15 @@ header {
 }
 
 .logo:hover {
-  transform: scale(1.2);
+  transform: scale(1.2); /* Enlarge on hover */
 }
 
-/* Navigation links */
+/*==============================
+  Navigation Links
+==============================*/
 nav a {
   font-size: 1.7rem;
-  color: rgb(255, 255, 255);
+  color: #fff;
   margin-left: 4rem;
   font-weight: 500;
   transition: 0.3s ease color, 0.3s ease border-bottom;
@@ -82,17 +98,23 @@ nav a.active {
   border-bottom: 3px solid var(--color-principal);
 }
 
-/* Hidden menu for mobile */
+/*==============================
+  Mobile Menu Placeholder
+==============================*/
 .menu {
   display: none;
 }
 
-/* Generic section padding */
+/*==============================
+  General Section Padding
+==============================*/
 section {
   padding: 1rem 9% 1rem;
 }
 
-/* Home section layout */
+/*==============================
+  Home Section Layout
+==============================*/
 .home {
   display: flex;
   flex-flow: row wrap;
@@ -104,22 +126,24 @@ section {
   margin-top: 5rem;
 }
 
-/* Home content title styles */
+/* Home Section Heading */
 .home .home-content h1 {
   font-size: 6rem;
   font-weight: 700;
   line-height: 1.3;
 }
 
+/* Highlighted text in spans */
 span {
   color: var(--color-principal);
 }
 
+/* Text Content Layout */
 .home-content {
   flex: 1;
 }
 
-/* Subtitle inside home */
+/* Subtitle styling */
 .home-content h3 {
   font-size: 4rem;
   margin-bottom: 2rem;
@@ -130,7 +154,9 @@ span {
   font-size: 1.6rem;
 }
 
-/* Image settings for home */
+/*==============================
+  Home Image Styling
+==============================*/
 .home-img {
   border-radius: 50%;
   min-width: 300px;
@@ -143,6 +169,7 @@ span {
   position: relative;
   border-radius: 33px;
   transition: 0.4s linear;
+  /* Gradient mask effect on image */
   mask-image: linear-gradient(black 40%, transparent);
   mask-image: linear-gradient(
     transparent 5%,
@@ -151,7 +178,9 @@ span {
   );
 }
 
-/* Download CV button */
+/*==============================
+  Download CV Button
+==============================*/
 .download-cv {
   font-family: var(--fuente-secundaria);
   padding: 10px 20px;
@@ -160,10 +189,8 @@ span {
   border-radius: 20px;
   margin-top: 3rem;
   cursor: pointer;
-  -webkit-box-shadow: 0px 10px 13px -7px #000000,
-    1px -5px 20px 9px rgba(163, 138, 231, 0.14);
   box-shadow: 0px 10px 13px -7px #000000,
-    1px -5px 20px 9px rgba(163, 138, 231, 0.14);
+              1px -5px 20px 9px rgba(163, 138, 231, 0.14);
 }
 
 .download-cv:hover {
@@ -171,7 +198,9 @@ span {
   box-shadow: none;
 }
 
-/*-------------------- ABOUT SECTION --------------------*/
+/*==============================
+  About Section
+==============================*/
 .about {
   display: grid;
   background-color: rgb(19, 18, 18);
@@ -185,7 +214,6 @@ span {
 
 .about-info {
   text-align: justify;
-  align-items: center;
   font-family: var(--fuente-secundaria);
   font-size: 1.4rem;
 }
@@ -202,6 +230,7 @@ span {
   color: var(--color-principal);
 }
 
+/* Decorative line divider */
 .divider {
   height: 4px;
   width: 14rem;
@@ -209,10 +238,12 @@ span {
   margin-bottom: 2rem;
 }
 
+/* Button margin inside about */
 .about button {
   margin-top: 2rem;
 }
 
+/* Embedded video or iframe */
 .about iframe {
   margin-top: 10%;
   margin-bottom: 10%;
@@ -221,7 +252,9 @@ span {
   border-radius: 20px;
 }
 
-/*-------------------- SKILLS SECTION --------------------*/
+/*==============================
+  Skills Section
+==============================*/
 #skills {
   max-width: 800px;
   margin: 60px auto;
@@ -260,7 +293,9 @@ span {
   transform: scale(1.2);
 }
 
-/*-------------------- PROJECTS SECTION --------------------*/
+/*==============================
+  Projects Section
+==============================*/
 #projects {
   max-width: 900px;
   margin: 60px auto;
@@ -305,6 +340,7 @@ span {
   font-size: 14px;
 }
 
+/* Project buttons and icons */
 .proyects-links {
   margin-top: 2rem;
   display: flex;
@@ -330,7 +366,9 @@ span {
   color: white;
 }
 
-/* Tooltip style */
+/*==============================
+  Tooltip Styling
+==============================*/
 .tooltip {
   position: relative;
   display: inline-block;
@@ -368,7 +406,9 @@ span {
   opacity: 1;
 }
 
-/*-------------------- CONTACT SECTION --------------------*/
+/*==============================
+  Contact Section
+==============================*/
 .contact {
   display: flex;
   justify-content: space-evenly;
@@ -404,20 +444,14 @@ input[type="email"],
 textarea {
   padding: 10px;
   border-radius: 6px;
-  border: none;
   background-color: #ffffff;
-  color: rgb(0, 0, 0);
+  color: #000;
   resize: vertical;
 }
 
 input[type="submit"] {
-  background: linear-gradient(
-    115deg,
-    rgba(103, 19, 152, 1) 19%,
-    rgba(150, 44, 168, 1) 100%
-  );
+  background: linear-gradient(115deg, rgba(103, 19, 152, 1) 19%, rgba(150, 44, 168, 1) 100%);
   color: #ffffff;
-  border: none;
   padding: 12px;
   border-radius: 6px;
   font-size: 1rem;
@@ -426,11 +460,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background: linear-gradient(
-    115deg,
-    rgba(66, 9, 99, 1) 19%,
-    rgba(98, 25, 110, 1) 100%
-  );
+  background: linear-gradient(115deg, rgba(66, 9, 99, 1) 19%, rgba(98, 25, 110, 1) 100%);
 }
 
 .contact-img img {
@@ -438,28 +468,26 @@ input[type="submit"]:hover {
   height: 100%;
 }
 
-/*-------------------- FOOTER --------------------*/
+/*==============================
+  Footer Styling
+==============================*/
 .footer-section {
   padding: 50px;
   text-align: center;
-  background: linear-gradient(
-    115deg,
-    rgba(103, 19, 152, 1) 19%,
-    rgba(150, 44, 168, 1) 100%
-  );
-  color: rgb(255, 255, 255);
+  background: linear-gradient(115deg, rgba(103, 19, 152, 1) 19%, rgba(150, 44, 168, 1) 100%);
+  color: #fff;
   bottom: 0;
 }
 
-/*-------------------- RESPONSIVE DESIGN --------------------*/
+/*==============================
+  Responsive Design
+==============================*/
 @media (max-width: 600px) {
   #skills li {
     width: 100%;
   }
 
-  table,
-  th,
-  td {
+  table, th, td {
     font-size: 0.9rem;
   }
 
@@ -511,7 +539,7 @@ input[type="submit"]:hover {
 
   .content-about-me {
     height: 100%;
-    padding: 4% 7% 4% 7%;
+    padding: 4% 7%;
     display: flex;
     flex-direction: column;
     gap: 5rem;
@@ -519,7 +547,6 @@ input[type="submit"]:hover {
 
   .about {
     display: grid;
-    background-color: rgb(19, 18, 18);
     grid-template-columns: repeat(1, 2fr);
     width: 100%;
     height: 100%;
@@ -530,8 +557,6 @@ input[type="submit"]:hover {
 
   .about-info {
     text-align: center;
-    grid-column: 1/1;
-    align-items: center;
     font-family: var(--fuente-secundaria);
     font-size: 1.4rem;
   }
@@ -556,7 +581,6 @@ input[type="submit"]:hover {
     margin-bottom: 10%;
     width: 100%;
     height: 80%;
-    grid-column: 1/1;
   }
 
   .contact form {
