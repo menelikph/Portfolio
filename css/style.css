@@ -206,7 +206,7 @@ span {
   background-color: rgb(19, 18, 18);
   grid-template-columns: repeat(2, 1fr);
   width: 100vw;
-  height: 90vh;
+  min-height: 90vh;
   align-items: center;
   gap: 5rem;
   padding: 2rem 10rem;
