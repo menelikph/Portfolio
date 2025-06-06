@@ -1,70 +1,74 @@
-/*===============================================
-  GOOGLE FONTS IMPORT
-================================================*/
+/*==============================
+  Import Google Fonts
+==============================*/
 @import url("https://fonts.googleapis.com/css2?family=League+Gothic&display=swap");
 
-/*=================================================
-  GLOBAL VARIABLES (CSS Custom Properties)
-  Used throughout the site for consistent theming
-===================================================*/
+/*==============================
+  CSS Custom Properties (Variables)
+==============================*/
 :root {
-  --color-principal: #a38ae7; /* Primary accent color used in highlights, buttons, links */
-  --color-secundario: #9e8ae77a; /* Secondary color for hover effects or backgrounds */
-  --font-title: "League Gothic", sans-serif; /* Display font for large headings */
-  --font-body: "Poppins", sans-serif; /* Clean, modern sans-serif for paragraphs */
+  --color-principal: #a38ae7; /* Primary accent color */
+  --color-secundario: #9e8ae77a; /* Secondary accent color (semi-transparent) */
+  --fuente-principal: "League Gothic", sans-serif; /* Title font */
+  --fuente-secundaria: "Poppins", sans-serif; /* Body font */
 }
 
-/*==================================================
-  CSS RESET
-  Normalize default browser styling for consistency
-==================================================*/
+/*==============================
+  Global Reset
+==============================*/
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Ensures padding and border are included in width/height */
-  text-decoration: none; /* Removes underlines from links */
+  box-sizing: border-box;
+  text-decoration: none;
   border: none;
   outline: none;
-  font-family: var(--font-body); /* Apply global font */
+  font-family: var(--fuente-secundaria);
 }
 
-/*==================================================
-  HTML DOCUMENT BASE STYLES
-==================================================*/
+/*==============================
+  HTML Base Styles
+==============================*/
 html {
-  color-scheme: dark; /* Support for dark mode UI */
-  font-size: 12px; /* Sets base font-size, enables rem-based layout scaling */
-  scroll-behavior: smooth; /* Smooth scroll for anchor navigation */
+  color-scheme: dark; /* Enables dark theme preferences */
+  font-size: 12px; /* Base font size */
+  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
 }
 
+/*==============================
+  Body Styling
+==============================*/
 body {
   width: 100%;
   height: 100%;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-  background-color: black; /* Overall background theme */
-  color: white; /* Default text color */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  background-color: black;
+  color: white;
 }
 
-/*==================================================
-  HEADER & NAVIGATION
-  Sticky header with flex layout for responsive menu
-==================================================*/
+/*==============================
+  Header & Navigation Bar
+==============================*/
 header {
-  position: fixed; /* Stick to top */
+  position: fixed; /* Stick to top of page */
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
   width: 100%;
   padding: 2rem 9%;
+  filter: drop-shadow(60px); /* Shadow effect */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 100; /* Keep above all content */
-  backdrop-filter: blur(10px); /* Background blur for a modern effect */
+  z-index: 100; /* Bring to front */
+  backdrop-filter: blur(10px); /* Blur behind content */
 }
 
+/*==============================
+  Logo Styling
+==============================*/
 .logo {
-  font-family: var(--font-title);
+  font-family: var(--fuente-principal);
   text-transform: uppercase;
   font-size: 4rem;
   color: var(--color-principal);
@@ -72,52 +76,74 @@ header {
 }
 
 .logo:hover {
-  transform: scale(1.2); /* Logo enlarges on hover */
+  transform: scale(1.2); /* Enlarge on hover */
 }
 
+/*==============================
+  Navigation Links
+==============================*/
 nav a {
   font-size: 1.7rem;
   color: #fff;
   margin-left: 4rem;
   font-weight: 500;
   transition: 0.3s ease color, 0.3s ease border-bottom;
-  border-bottom: 3px solid transparent; /* Transition border */
+  border-bottom: 3px solid transparent;
+  text-decoration: none;
 }
 
 nav a:hover,
 nav a.active {
-  color: var(--color-principal); /* Highlight active or hovered link */
+  color: var(--color-principal);
   border-bottom: 3px solid var(--color-principal);
 }
 
+/*==============================
+  Mobile Menu Placeholder
+==============================*/
 .menu {
-  display: none; /* Only shown on smaller screens */
+  display: none;
 }
 
-/*==================================================
-  HOME SECTION - Hero layout with Flexbox
-==================================================*/
+/*==============================
+  General Section Padding
+==============================*/
+section {
+  padding: 1rem 9% 1rem;
+}
+
+/*==============================
+  Home Section Layout
+==============================*/
 .home {
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
   column-gap: 8rem;
   background-color: black;
-  min-height: 100vh; /* Full viewport height */
-  margin-top: 5rem; /* Spacing from header */
+  min-height: 100vh;
+  margin-top: 5rem;
 }
 
-.home-content h1 {
+/* Home Section Heading */
+.home .home-content h1 {
   font-size: 6rem;
   font-weight: 700;
   line-height: 1.3;
 }
 
+/* Highlighted text in spans */
 span {
-  color: var(--color-principal); /* Emphasized words */
+  color: var(--color-principal);
 }
 
+/* Text Content Layout */
+.home-content {
+  flex: 1;
+}
+
+/* Subtitle styling */
 .home-content h3 {
   font-size: 4rem;
   margin-bottom: 2rem;
@@ -125,13 +151,16 @@ span {
 }
 
 .home-content p {
-  font-size: 1.6rem; /* Paragraph size */
+  font-size: 1.6rem;
 }
 
+/*==============================
+  Home Image Styling
+==============================*/
 .home-img {
   border-radius: 50%;
   min-width: 300px;
-  width: 30vw; /* Responsive width */
+  width: 30vw;
 }
 
 .home-img img {
@@ -140,21 +169,28 @@ span {
   position: relative;
   border-radius: 33px;
   transition: 0.4s linear;
-  /* Gradient mask for creative image fade */
-  mask-image: linear-gradient(transparent 5%, white 30%, transparent 100%);
+  /* Gradient mask effect on image */
+  mask-image: linear-gradient(black 40%, transparent);
+  mask-image: linear-gradient(
+    transparent 5%,
+    rgb(255, 255, 255) 30%,
+    transparent 100%
+  );
 }
 
-/*==================================================
-  DOWNLOAD CV BUTTON STYLES
-==================================================*/
+/*==============================
+  Download CV Button
+==============================*/
 .download-cv {
+  font-family: var(--fuente-secundaria);
   padding: 10px 20px;
   background-color: var(--color-principal);
+  border: none;
   border-radius: 20px;
   margin-top: 3rem;
   cursor: pointer;
   box-shadow: 0px 10px 13px -7px #000000,
-              1px -5px 20px 9px rgba(163, 138, 231, 0.14);
+    1px -5px 20px 9px rgba(163, 138, 231, 0.14);
 }
 
 .download-cv:hover {
@@ -162,30 +198,39 @@ span {
   box-shadow: none;
 }
 
-/*==================================================
-  ABOUT SECTION - Layout using CSS Grid
-==================================================*/
+/*==============================
+  About Section
+==============================*/
 .about {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two-column layout */
+  background-color: rgb(19, 18, 18);
+  grid-template-columns: repeat(2, 1fr);
   width: 100vw;
   height: 90vh;
   align-items: center;
-  gap: 5rem; /* Space between columns */
+  gap: 5rem;
   padding: 2rem 10rem;
-  background-color: rgb(19, 18, 18);
 }
 
 .about-info {
   text-align: justify;
+  font-family: var(--fuente-secundaria);
   font-size: 1.4rem;
 }
 
-.about-title h1 {
-  font-family: var(--font-title);
+.about-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  font-size: 1.9rem;
+}
+
+.about-info h1 {
+  font-family: var(--fuente-principal);
   color: var(--color-principal);
 }
 
+/* Decorative line divider */
 .divider {
   height: 4px;
   width: 14rem;
@@ -193,15 +238,36 @@ span {
   margin-bottom: 2rem;
 }
 
+/* Button margin inside about */
+.about button {
+  margin-top: 2rem;
+}
+
+/* Embedded video or iframe */
 .about iframe {
+  margin-top: 10%;
+  margin-bottom: 10%;
   width: 100%;
   height: 60%;
   border-radius: 20px;
 }
 
-/*==================================================
-  SKILLS SECTION - Responsive Grid Display
-==================================================*/
+/*==============================
+  Skills Section
+==============================*/
+#skills {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+#skills h2 {
+  font-size: 5rem;
+  color: var(--color-principal);
+  font-family: var(--fuente-principal);
+}
+
 #skills ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -212,55 +278,339 @@ span {
 
 #skills li {
   background-color: #1a1a1a;
+  margin: 10px auto;
   padding: 12px 20px;
+  width: fit-content;
+  min-width: 10rem;
   border-radius: 8px;
   font-size: 1.1rem;
+  color: #ffffff;
   transition: background 0.3s;
-  text-align: center;
 }
 
 #skills li:hover {
   background-color: #333333;
-  transform: scale(1.1); /* Subtle zoom effect */
+  transform: scale(1.1);
 }
 
-/*==================================================
-  PROJECTS SECTION - Grid-based layout
-==================================================*/
+/*==============================
+  Projects Section
+==============================*/
+#projects {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+#projects h2 {
+  font-size: 5rem;
+  color: var(--color-principal);
+  font-family: var(--fuente-principal);
+}
+
+#projects h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-principal);
+  margin-bottom: 15px;
+}
+
 .list-proyects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsive columns */
-  gap: 2rem;
   justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
 }
 
-/*==================================================
-  CONTACT SECTION - Form and image layout
-==================================================*/
+#projects article {
+  background-color: #121212;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  width: 40rem;
+}
+
+#projects img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 15px;
+  margin-bottom: 2rem;
+}
+
+#projects p {
+  font-size: 14px;
+}
+
+/* Project buttons and icons */
+.proyects-links {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.link-button {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 100%;
+  background-color: var(--color-secundario);
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.link-button i {
+  text-decoration: none;
+  color: white;
+}
+
+/*==============================
+  Tooltip Styling
+==============================*/
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 6px 10px;
+  border-radius: 6px;
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  white-space: nowrap;
+}
+
+.tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*==============================
+  Contact Section
+==============================*/
 .contact {
   display: flex;
   justify-content: space-evenly;
+  padding: 0;
+}
+
+.contact h2 {
+  font-family: var(--fuente-principal);
+  margin: 20px;
+  text-align: center;
+  font-size: 5rem;
+}
+
+.contact form {
+  width: 50rem;
 }
 
 form {
   display: flex;
   flex-direction: column;
   gap: 2px;
+  width: 100%;
+  height: 100%;
 }
 
-/*==================================================
-  MEDIA QUERIES - Responsive breakpoints
-==================================================*/
-@media (max-width: 1251px) {
-  .about {
-    grid-template-columns: 1fr; /* Stack layout for tablets */
-    padding: 2rem 4rem;
+label {
+  font-size: 1rem;
+  color: var(--color-principal);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 10px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #000;
+  resize: vertical;
+}
+
+input[type="submit"] {
+  background: linear-gradient(
+    115deg,
+    rgba(103, 19, 152, 1) 19%,
+    rgba(150, 44, 168, 1) 100%
+  );
+  color: #ffffff;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+input[type="submit"]:hover {
+  background: linear-gradient(
+    115deg,
+    rgba(66, 9, 99, 1) 19%,
+    rgba(98, 25, 110, 1) 100%
+  );
+}
+
+.contact-img img {
+  width: 50rem;
+  height: 100%;
+}
+
+/*==============================
+  Footer Styling
+==============================*/
+.footer-section {
+  padding: 50px;
+  text-align: center;
+  background: linear-gradient(
+    115deg,
+    rgba(103, 19, 152, 1) 19%,
+    rgba(150, 44, 168, 1) 100%
+  );
+  color: #fff;
+  bottom: 0;
+}
+
+/*==============================
+  Responsive Design
+==============================*/
+@media (max-width: 600px) {
+  #skills li {
+    width: 100%;
+  }
+
+  table,
+  th,
+  td {
+    font-size: 0.9rem;
+  }
+
+  input[type="submit"] {
+    font-size: 0.95rem;
   }
 }
 
-@media (max-width: 600px) {
-  #skills ul {
-    grid-template-columns: 1fr; /* Stack skills vertically */
+@media (max-width: 1251px) {
+  nav {
+    padding: 8px;
+    position: absolute;
+    top: 100%;
+    overflow: hidden;
+    right: 16px;
+    width: 40%;
+    border: 1px solid rgba(255, 231, 231, 0.1);
+    border-radius: 2rem;
+    padding: 1rem solid;
+    background-color: #050505;
+    transition: 0.2s ease opacity;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+  }
+
+  .menu {
+    display: flex;
+  }
+
+  #menu:checked + nav {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  nav a {
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
+    padding: 1rem;
+  }
+
+  nav a:hover,
+  nav a.active {
+    border-radius: 0.5rem;
+    border-bottom: 0.5rem solid var(--color-principal);
+  }
+
+  .content-about-me {
+    height: 100%;
+    padding: 4% 7%;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+  }
+
+  .about {
+    display: grid;
+    grid-template-columns: repeat(1, 2fr);
+    width: 100%;
+    height: 100%;
+    padding: 2rem 4rem;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .about-info {
+    text-align: center;
+    font-family: var(--fuente-secundaria);
+    font-size: 1.4rem;
+  }
+
+  .about-title {
+    align-items: center;
+  }
+
+  .divider {
+    height: 4px;
+    width: 14rem;
+    background-color: var(--color-principal);
+    margin-bottom: 2rem;
+  }
+
+  .about button {
+    margin-top: 2rem;
+  }
+
+  .about iframe {
+    margin-top: 20%;
+    margin-bottom: 10%;
+    width: 100%;
+    height: 80%;
+  }
+  .contact {
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact form {
+    width: 100%;
+    padding: 2rem 2rem;
+  }
+
+  .contact-img img {
+    display: none;
   }
 }
 
@@ -268,14 +618,29 @@ form {
   .home-content h1 {
     font-size: 3rem;
   }
+
   .home-content h3 {
     font-size: 2rem;
   }
+
   .download-cv {
-    width: 100%; /* Full-width button */
+    width: 100%;
+  }
+
+  #projects article {
+    width: 100%;
+  }
+
+  .contact {
+    padding: 1rem;
+  }
+
+  #skills ul {
+    grid-template-columns: 1fr;
+  }
+
+  #skills li {
+    font-size: 1.2rem;
+    text-align: center;
   }
 }
-
-/*===============================
-  END OF CSS STYLESHEET
-===============================*/
