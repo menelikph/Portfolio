@@ -169,7 +169,6 @@ span {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Two-column layout */
   width: 100vw;
-  min-height: 90vh;
   align-items: center;
   gap: 5rem; /* Space between columns */
   padding: 2rem 10rem;
