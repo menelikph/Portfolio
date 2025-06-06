@@ -33,7 +33,7 @@
 ==================================================*/
 html {
   color-scheme: dark; /* Support for dark mode UI */
-  font-size: 12px; /* Sets base font-size, enables rem-based layout scaling */
+  font-size: 15px; /* Sets base font-size, enables rem-based layout scaling */
   scroll-behavior: smooth; /* Smooth scroll for anchor navigation */
 }
 
@@ -169,7 +169,7 @@ span {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Two-column layout */
   width: 100vw;
-  height: 90vh;
+  min-height: 90vh;
   align-items: center;
   gap: 5rem; /* Space between columns */
   padding: 2rem 10rem;
