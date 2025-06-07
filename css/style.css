@@ -1,319 +1,335 @@
 /*==============================
   Import Google Fonts
+  Import the "League Gothic" font from Google Fonts for title use.
 ==============================*/
 @import url("https://fonts.googleapis.com/css2?family=League+Gothic&display=swap");
 
 /*==============================
   CSS Custom Properties (Variables)
+  Define color and font variables for easier theming and reuse.
 ==============================*/
 :root {
-  --color-principal: #a38ae7; /* Primary accent color */
-  --color-secundario: #9e8ae77a; /* Secondary accent color (semi-transparent) */
-  --fuente-principal: "League Gothic", sans-serif; /* Title font */
-  --fuente-secundaria: "Poppins", sans-serif; /* Body font */
+  --color-principal: #a38ae7; /* Primary accent color used for highlights and interactive elements */
+  --color-secundario: #9e8ae77a; /* Secondary accent color with transparency, ideal for overlays or backgrounds */
+  --fuente-principal: "League Gothic", sans-serif; /* Font for headings and logos */
+  --fuente-secundaria: "Poppins", sans-serif; /* Font for body text and general content */
 }
 
 /*==============================
   Global Reset
+  Remove default margins, paddings, and other styles for consistent base.
 ==============================*/
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-  border: none;
-  outline: none;
-  font-family: var(--fuente-secundaria);
+  margin: 0; /* Remove default element margin */
+  padding: 0; /* Remove default element padding */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  text-decoration: none; /* Remove underline from links */
+  border: none; /* Remove default borders */
+  outline: none; /* Remove focus outline */
+  font-family: var(--fuente-secundaria); /* Set default font to secondary font */
 }
 
 /*==============================
   HTML Base Styles
+  Base font sizing and smooth scroll behavior.
 ==============================*/
 html {
-  color-scheme: dark; /* Enables dark theme preferences */
-  font-size: 12px; /* Base font size */
-  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+  color-scheme: dark; /* Enables dark theme preference on supported browsers */
+  font-size: 12px; /* Base font size, for easier rem calculations */
+  scroll-behavior: smooth; /* Smooth scrolling for anchor navigation */
 }
 
 /*==============================
   Body Styling
+  Set full viewport size and color scheme.
 ==============================*/
 body {
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden; /* Prevent horizontal scroll */
-  background-color: black;
-  color: white;
+  width: 100%; /* Take full width of viewport */
+  height: 100%; /* Take full height of viewport */
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
+  background-color: black; /* Set background to black */
+  color: white; /* Set default text color to white */
 }
 
 /*==============================
   Header & Navigation Bar
+  Fixed header with semi-transparent background and blur effect.
 ==============================*/
 header {
-  position: fixed; /* Stick to top of page */
+  position: fixed; /* Fix header at top */
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
-  width: 100%;
-  padding: 2rem 9%;
-  filter: drop-shadow(60px); /* Shadow effect */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 100; /* Bring to front */
-  backdrop-filter: blur(10px); /* Blur behind content */
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  width: 100%; /* Full width */
+  padding: 2rem 9%; /* Vertical and horizontal padding */
+  filter: drop-shadow(60px); /* Drop shadow effect for depth */
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space out child elements */
+  align-items: center; /* Center items vertically */
+  z-index: 100; /* Ensure header stays on top */
+  backdrop-filter: blur(10px); /* Blur background behind header */
 }
 
 /*==============================
   Logo Styling
+  Style the logo with custom font, uppercase, color and hover effect.
 ==============================*/
 .logo {
-  font-family: var(--fuente-principal);
-  text-transform: uppercase;
-  font-size: 4rem;
-  color: var(--color-principal);
-  transition: 0.5s ease;
+  font-family: var(--fuente-principal); /* Use title font */
+  text-transform: uppercase; /* Uppercase letters */
+  font-size: 4rem; /* Large size */
+  color: var(--color-principal); /* Primary accent color */
+  transition: 0.5s ease; /* Smooth transition for transform */
 }
 
 .logo:hover {
-  transform: scale(1.2); /* Enlarge on hover */
+  transform: scale(1.2); /* Enlarge logo on hover */
 }
 
 /*==============================
   Navigation Links
+  Style navigation links with spacing, font size, and hover effects.
 ==============================*/
 nav a {
-  font-size: 1.7rem;
-  color: #fff;
-  margin-left: 4rem;
-  font-weight: 500;
-  transition: 0.3s ease color, 0.3s ease border-bottom;
-  border-bottom: 3px solid transparent;
-  text-decoration: none;
+  font-size: 1.7rem; /* Font size for links */
+  color: #fff; /* White text */
+  margin-left: 4rem; /* Spacing between links */
+  font-weight: 500; /* Medium font weight */
+  transition: 0.3s ease color, 0.3s ease border-bottom; /* Smooth color and border transition */
+  border-bottom: 3px solid transparent; /* Invisible bottom border by default */
+  text-decoration: none; /* Remove underline */
 }
 
 nav a:hover,
 nav a.active {
-  color: var(--color-principal);
-  border-bottom: 3px solid var(--color-principal);
+  color: var(--color-principal); /* Change color on hover or if active */
+  border-bottom: 3px solid var(--color-principal); /* Show colored underline */
 }
 
 /*==============================
   Mobile Menu Placeholder
+  Hidden menu for mobile, displayed via media queries.
 ==============================*/
 .menu {
-  display: none;
+  display: none; /* Hide by default */
 }
 
 /*==============================
   General Section Padding
+  Uniform padding for all section elements.
 ==============================*/
 section {
-  padding: 1rem 9% 1rem;
+  padding: 1rem 9% 1rem; /* Vertical and horizontal padding */
 }
 
 /*==============================
   Home Section Layout
+  Flex container centered horizontally and vertically.
 ==============================*/
 .home {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-  column-gap: 8rem;
-  background-color: black;
-  min-height: 100vh;
-  margin-top: 5rem;
+  display: flex; /* Flex layout */
+  flex-flow: row wrap; /* Allow wrapping */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  column-gap: 8rem; /* Space between columns */
+  background-color: black; /* Black background */
+  min-height: 100vh; /* Full viewport height */
+  margin-top: 5rem; /* Space below fixed header */
 }
 
 /* Home Section Heading */
 .home .home-content h1 {
-  font-size: 6rem;
-  font-weight: 700;
-  line-height: 1.3;
+  font-size: 6rem; /* Very large heading */
+  font-weight: 700; /* Bold */
+  line-height: 1.3; /* Line height for readability */
 }
 
 /* Highlighted text in spans */
 span {
-  color: var(--color-principal);
+  color: var(--color-principal); /* Use accent color */
 }
 
 /* Text Content Layout */
 .home-content {
-  flex: 1;
+  flex: 1; /* Flexible width */
 }
 
 /* Subtitle styling */
 .home-content h3 {
-  font-size: 4rem;
-  margin-bottom: 2rem;
-  font-weight: 700;
+  font-size: 4rem; /* Large subtitle */
+  margin-bottom: 2rem; /* Space below */
+  font-weight: 700; /* Bold */
 }
 
 .home-content p {
-  font-size: 1.6rem;
+  font-size: 1.6rem; /* Paragraph text size */
 }
 
 /*==============================
   Home Image Styling
+  Circular images with gradient masking for fade effect.
 ==============================*/
 .home-img {
-  border-radius: 50%;
-  min-width: 300px;
-  width: 30vw;
+  border-radius: 50%; /* Circular container */
+  min-width: 300px; /* Minimum size */
+  width: 30vw; /* Responsive width */
 }
 
 .home-img img {
-  width: 100%;
-  margin-top: 22px;
-  position: relative;
-  border-radius: 33px;
-  transition: 0.4s linear;
+  width: 100%; /* Full container width */
+  margin-top: 22px; /* Space above */
+  position: relative; /* Relative positioning */
+  border-radius: 33px; /* Rounded corners */
+  transition: 0.4s linear; /* Smooth transitions */
   /* Gradient mask effect on image */
-  mask-image: linear-gradient(black 40%, transparent);
+  mask-image: linear-gradient(black 40%, transparent); /* Fade mask from bottom */
   mask-image: linear-gradient(
-    transparent 5%,
-    rgb(255, 255, 255) 30%,
-    transparent 100%
+    transparent 5%, /* Transparent top */
+    rgb(255, 255, 255) 30%, /* Solid in middle */
+    transparent 100% /* Transparent bottom */
   );
 }
 
 /*==============================
   Download CV Button
+  Styled button with colors, padding, and hover effects.
 ==============================*/
 .download-cv {
-  font-family: var(--fuente-secundaria);
-  padding: 10px 20px;
-  background-color: var(--color-principal);
-  border: none;
-  border-radius: 20px;
-  margin-top: 3rem;
-  cursor: pointer;
+  font-family: var(--fuente-secundaria); /* Body font */
+  padding: 10px 20px; /* Padding inside button */
+  background-color: var(--color-principal); /* Accent background */
+  border: none; /* No border */
+  border-radius: 20px; /* Rounded pill shape */
+  margin-top: 3rem; /* Spacing above */
+  cursor: pointer; /* Pointer cursor */
   box-shadow: 0px 10px 13px -7px #000000,
-    1px -5px 20px 9px rgba(163, 138, 231, 0.14);
+    1px -5px 20px 9px rgba(163, 138, 231, 0.14); /* Soft shadow */
 }
 
 .download-cv:hover {
-  background-color: #846cc7;
-  box-shadow: none;
+  background-color: #846cc7; /* Darker accent on hover */
+  box-shadow: none; /* Remove shadow on hover */
 }
 
 /*==============================
   About Section
+  Two-column grid layout with gap and padding.
 ==============================*/
 .about {
-  display: grid;
-  background-color: rgb(19, 18, 18);
-  grid-template-columns: repeat(2, 1fr);
-  width: 100vw;
-  height: 90vh;
-  align-items: center;
-  gap: 5rem;
-  padding: 2rem 10rem;
+  display: grid; /* Use CSS Grid */
+  background-color: rgb(19, 18, 18); /* Very dark background */
+  grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+  width: 100vw; /* Full viewport width */
+  height: 90vh; /* Almost full viewport height */
+  align-items: center; /* Vertical centering */
+  gap: 5rem; /* Gap between columns */
+  padding: 2rem 10rem; /* Padding inside section */
 }
 
 .about-info {
-  text-align: justify;
-  font-family: var(--fuente-secundaria);
-  font-size: 1.4rem;
+  text-align: justify; /* Justify paragraph text */
+  font-family: var(--fuente-secundaria); /* Body font */
+  font-size: 1.4rem; /* Readable font size */
 }
 
 .about-title {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  font-size: 1.9rem;
+  display: flex; /* Flex container */
+  flex-direction: column; /* Stack vertically */
+  justify-content: start; /* Align to top */
+  font-size: 1.9rem; /* Title font size */
 }
 
 .about-info h1 {
-  font-family: var(--fuente-principal);
-  color: var(--color-principal);
+  font-family: var(--fuente-principal); /* Title font */
+  color: var(--color-principal); /* Accent color */
 }
 
 /* Decorative line divider */
 .divider {
-  height: 4px;
-  width: 14rem;
-  background-color: var(--color-principal);
-  margin-bottom: 2rem;
+  height: 4px; /* Line thickness */
+  width: 14rem; /* Length */
+  background-color: var(--color-principal); /* Accent color */
+  margin-bottom: 2rem; /* Space below */
 }
 
 /* Button margin inside about */
 .about button {
-  margin-top: 2rem;
+  margin-top: 2rem; /* Space above buttons */
 }
 
-/* Embedded video or iframe */
+/* Embedded video or iframe styling */
 .about iframe {
-  margin-top: 10%;
-  margin-bottom: 10%;
-  width: 100%;
-  height: 60%;
-  border-radius: 20px;
+  margin-top: 10%; /* Top margin */
+  margin-bottom: 10%; /* Bottom margin */
+  width: 100%; /* Full width */
+  height: 60%; /* Set height */
+  border-radius: 20px; /* Rounded corners */
 }
 
 /*==============================
   Skills Section
+  Centered grid layout for skill items.
 ==============================*/
 #skills {
-  max-width: 800px;
-  margin: 60px auto;
-  padding: 20px;
-  text-align: center;
+  max-width: 800px; /* Max container width */
+  margin: 60px auto; /* Center horizontally with margin */
+  padding: 20px; /* Padding inside container */
+  text-align: center; /* Center text */
 }
 
 #skills h2 {
-  font-size: 5rem;
-  color: var(--color-principal);
-  font-family: var(--fuente-principal);
+  font-size: 5rem; /* Large heading */
+  color: var(--color-principal); /* Accent color */
+  font-family: var(--fuente-principal); /* Title font */
 }
 
 #skills ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 2rem;
-  list-style: none;
-  padding: 0;
+  display: grid; /* Grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Responsive columns */
+  gap: 2rem; /* Gap between skill items */
+  list-style: none; /* Remove bullet points */
+  padding: 0; /* Remove padding */
 }
 
 #skills li {
-  background-color: #1a1a1a;
-  margin: 10px auto;
-  padding: 12px 20px;
-  width: fit-content;
-  min-width: 10rem;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  color: #ffffff;
-  transition: background 0.3s;
+  background-color: #1a1a1a; /* Dark background for each skill */
+  margin: 10px auto; /* Vertical margin and center horizontally */
+  padding: 12px 20px; /* Padding inside each item */
+  width: fit-content; /* Width adjusts to content */
+  min-width: 10rem; /* Minimum width */
+  border-radius: 8px; /* Rounded corners */
+  font-size: 1.1rem; /* Font size */
+  color: #ffffff; /* White text */
+  transition: background 0.3s; /* Smooth background transition */
 }
 
 #skills li:hover {
-  background-color: #333333;
-  transform: scale(1.1);
+  background-color: #333333; /* Lighter background on hover */
+  transform: scale(1.1); /* Slight zoom effect */
 }
 
 /*==============================
   Projects Section
+  Centered layout with responsive grid of projects.
 ==============================*/
 #projects {
-  max-width: 900px;
-  margin: 60px auto;
-  padding: 20px;
-  text-align: center;
+  max-width: 900px; /* Max width */
+  margin: 60px auto; /* Centered horizontally with margin */
+  padding: 20px; /* Padding */
+  text-align: center; /* Center text */
 }
 
 #projects h2 {
-  font-size: 5rem;
-  color: var(--color-principal);
-  font-family: var(--fuente-principal);
+  font-size: 5rem; /* Large section heading */
+  color: var(--color-principal); /* Accent color */
+  font-family: var(--fuente-principal); /* Title font */
 }
 
 #projects h3 {
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--color-principal);
-  margin-bottom: 15px;
+  font-size: 20px; /* Project title size */
+  font-weight: 600; /* Semi-bold */
+  color: var(--color-principal); /* Accent color */
+  margin-bottom: 15px; /* Space below */
 }
 
 .list-proyects {
