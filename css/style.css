@@ -1,4 +1,3 @@
-
 /*==============================
   Import Google Fonts
 ==============================*/
@@ -607,7 +606,7 @@ input[type="submit"]:hover {
 
   .contact form {
     width: 100%;
-    padding: 2rem 2rem;
+    padding: 2rem 10rem;
   }
 
   .contact-img img {
@@ -634,6 +633,17 @@ input[type="submit"]:hover {
 
   .contact {
     padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact form {
+    width: 100%;
+    padding: 2rem 2rem;
+  }
+
+  .contact-form {
+    width: 100%;
   }
 
   #skills ul {
