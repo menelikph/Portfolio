@@ -332,40 +332,49 @@ span {
   margin-bottom: 15px; /* Space below */
 }
 
+/* ========== Projects Section Grid Layout ========== */
+
+/* Defines a responsive grid layout for the project list */
 .list-proyects {
   display: grid;
-  justify-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
+  justify-items: center; /* Center items horizontally */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Auto-fit columns with min 320px width */
+  gap: 2rem; /* Gap between grid items */
 }
 
+/* Styles each project article */
 #projects article {
-  background-color: #121212;
-  padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 30px;
-  width: 40rem;
+  background-color: #121212; /* Dark background for contrast */
+  padding: 20px; /* Inner spacing */
+  border-radius: 12px; /* Rounded corners */
+  margin-bottom: 30px; /* Space below each project */
+  width: 40rem; /* Fixed width for layout */
 }
 
+/* Styles images inside project articles */
 #projects img {
-  max-width: 100%;
-  border-radius: 8px;
+  max-width: 100%; /* Makes image responsive */
+  border-radius: 8px; /* Smooth corners */
   margin-top: 15px;
   margin-bottom: 2rem;
 }
 
+/* Paragraph text inside projects */
 #projects p {
-  font-size: 14px;
+  font-size: 14px; /* Small font for descriptions */
 }
 
-/* Project buttons and icons */
+/* ========== Project Buttons and Icons ========== */
+
+/* Container for links/buttons in project cards */
 .proyects-links {
   margin-top: 2rem;
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 2rem; /* Space between buttons */
 }
 
+/* Individual link buttons (GitHub, Live Demo, etc.) */
 .link-button {
   text-decoration: none;
   display: flex;
@@ -373,41 +382,44 @@ span {
   justify-content: center;
   height: 4rem;
   width: 4rem;
-  border-radius: 100%;
-  background-color: var(--color-secundario);
+  border-radius: 100%; /* Perfect circle */
+  background-color: var(--color-secundario); /* Secondary theme color */
   font-size: 35px;
   cursor: pointer;
 }
 
+/* Icon inside the button */
 .link-button i {
   text-decoration: none;
   color: white;
 }
 
-/*==============================
-  Tooltip Styling
-==============================*/
+/* ========== Tooltip Styling ========== */
+
+/* Wrapper for elements with tooltip */
 .tooltip {
   position: relative;
   display: inline-block;
 }
 
+/* Hidden tooltip content initially */
 .tooltip-text {
   visibility: hidden;
-  background-color: #333;
-  color: #fff;
+  background-color: #333; /* Dark background */
+  color: #fff; /* White text */
   text-align: center;
   padding: 6px 10px;
   border-radius: 6px;
   position: absolute;
-  bottom: 120%;
+  bottom: 120%; /* Position above the element */
   left: 50%;
   transform: translateX(-50%);
-  opacity: 0;
+  opacity: 0; /* Invisible initially */
   transition: opacity 0.3s;
-  white-space: nowrap;
+  white-space: nowrap; /* Prevent line breaks */
 }
 
+/* Tooltip arrow */
 .tooltip-text::after {
   content: "";
   position: absolute;
@@ -419,20 +431,22 @@ span {
   border-color: #333 transparent transparent transparent;
 }
 
+/* Show tooltip on hover */
 .tooltip:hover .tooltip-text {
   visibility: visible;
   opacity: 1;
 }
 
-/*==============================
-  Contact Section
-==============================*/
+/* ========== Contact Section ========== */
+
+/* Main contact section container */
 .contact {
   display: flex;
   justify-content: space-evenly;
   padding: 0;
 }
 
+/* Contact section title */
 .contact h2 {
   font-family: var(--fuente-principal);
   margin: 20px;
@@ -440,10 +454,12 @@ span {
   font-size: 5rem;
 }
 
+/* Form wrapper */
 .contact form {
   width: 50rem;
 }
 
+/* General form layout */
 form {
   display: flex;
   flex-direction: column;
@@ -452,11 +468,13 @@ form {
   height: 100%;
 }
 
+/* Label styles */
 label {
   font-size: 1rem;
   color: var(--color-principal);
 }
 
+/* Input and textarea styles */
 input[type="text"],
 input[type="email"],
 textarea {
@@ -467,6 +485,7 @@ textarea {
   resize: vertical;
 }
 
+/* Submit button styling */
 input[type="submit"] {
   background: linear-gradient(
     115deg,
@@ -481,6 +500,7 @@ input[type="submit"] {
   transition: background 0.3s;
 }
 
+/* Submit button hover effect */
 input[type="submit"]:hover {
   background: linear-gradient(
     115deg,
@@ -489,14 +509,14 @@ input[type="submit"]:hover {
   );
 }
 
+/* Image section next to the contact form */
 .contact-img img {
   width: 50rem;
   height: 100%;
 }
 
-/*==============================
-  Footer Styling
-==============================*/
+/* ========== Footer Styling ========== */
+
 .footer-section {
   padding: 50px;
   text-align: center;
@@ -509,9 +529,9 @@ input[type="submit"]:hover {
   bottom: 0;
 }
 
-/*==============================
-  Responsive Design
-==============================*/
+/* ========== Responsive Design ========== */
+
+/* --------- Small Screens (<=600px) --------- */
 @media (max-width: 600px) {
   #skills li {
     width: 100%;
@@ -528,7 +548,9 @@ input[type="submit"]:hover {
   }
 }
 
+/* --------- Medium Screens (<=1251px) --------- */
 @media (max-width: 1251px) {
+  /* Mobile nav styles */
   nav {
     padding: 8px;
     position: absolute;
@@ -550,6 +572,7 @@ input[type="submit"]:hover {
     display: flex;
   }
 
+  /* Show nav menu if checkbox is checked */
   #menu:checked + nav {
     opacity: 1;
     transform: translateY(0);
@@ -569,6 +592,7 @@ input[type="submit"]:hover {
     border-bottom: 0.5rem solid var(--color-principal);
   }
 
+  /* About section layout for smaller screens */
   .content-about-me {
     height: 100%;
     padding: 4% 7%;
@@ -614,8 +638,9 @@ input[type="submit"]:hover {
     width: 100%;
     height: 80%;
   }
+
+  /* Contact layout for smaller screens */
   .contact {
-    /* width: 100%; */
     display: flex;
     flex-direction: column;
   }
@@ -626,10 +651,11 @@ input[type="submit"]:hover {
   }
 
   .contact-img img {
-    display: none;
+    display: none; /* Hide contact image on smaller screens */
   }
 }
 
+/* --------- Extra Small Screens (<=480px) --------- */
 @media (max-width: 480px) {
   .home-content h1 {
     font-size: 3rem;
